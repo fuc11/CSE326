@@ -1,0 +1,127 @@
+:root {
+  --bg: #f4f3f7;
+  --ink: #23202b;
+  --muted: #6f6a7a;
+  --line: #e2dfe8;
+  --accent: #7b1e3c;
+  --accent-dark: #5a1229;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+/* header with a soft stage-light glow */
+header {
+  background: radial-gradient(circle at 85% -40%, #8f2a4d 0%, transparent 55%), var(--ink);
+  color: var(--white);
+  padding: 26px 6vw 0;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.top h1 { margin: 0; font-size: 2rem; }
+.top p { margin: 2px 0 14px; color: #c9c3d6; font-size: 0.95rem; }
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; }
+h2 { font-size: 1.7rem; margin: 0 0 18px; }
+h3 { font-size: 1.15rem; margin: 0 0 10px; }
+
+nav { display: flex; gap: 4px; overflow-x: auto; }
+nav button {
+  background: none; border: none; border-radius: 0; color: #c9c3d6;
+  padding: 11px 16px; font-size: 0.95rem; cursor: pointer;
+  border-bottom: 3px solid transparent; white-space: nowrap;
+}
+nav button:hover { color: var(--white); background: none; }
+nav button.active { color: var(--white); border-bottom-color: #e8a3b9; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 30px 5vw 60px; }
+.hide { display: none; }
+
+/* white panels that hold forms */
+.box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+input, select {
+  padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px;
+  font-size: 0.95rem; background: var(--white); color: var(--ink);
+  flex: 1 1 160px; min-width: 0;
+}
+input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+button {
+  font-size: 0.95rem; padding: 10px 18px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--white);
+}
+button:hover { background: var(--accent-dark); }
+button.plain { background: none; color: var(--accent); }
+button.plain:hover { background: #f1e3ea; }
+button.small { padding: 4px 10px; font-size: 0.85rem; background: none; color: var(--accent); margin-right: 4px; }
+button.small:hover { background: var(--accent); color: var(--white); }
+
+.note { color: var(--muted); font-size: 0.9rem; margin: 8px 0; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
+.stat {
+  flex: 1 1 140px; background: var(--white); border-radius: 8px;
+  border: 1px solid var(--line); border-top: 4px solid var(--accent); padding: 14px 16px;
+}
+.stat b { display: block; font-family: Georgia, serif; font-size: 2.4rem; font-weight: normal; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+
+table {
+  width: 100%; border-collapse: collapse; background: var(--white);
+  border: 1px solid var(--line); border-radius: 8px;
+  display: block; overflow-x: auto; margin-top: 10px;
+}
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-weight: 600; font-size: 0.85rem; color: var(--muted); background: #faf9fc; }
+tr:hover td { background: #faf6f8; }
+tr.top td { background: #f8eef2; }
+
+.roleItem {
+  background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 10px;
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+}
+.roleItem small { color: var(--muted); display: block; }
+
+.chip {
+  display: inline-block; background: #f1e3ea; border-radius: 20px;
+  padding: 4px 6px 4px 12px; margin: 0 8px 8px 0; font-size: 0.9rem;
+}
+.chip button { padding: 0 8px; border: none; background: none; color: var(--accent); font-size: 1.1rem; }
+.chip button:hover { background: none; color: var(--ink); }
+
+.scoreBox { flex: 1 1 130px; }
+.scoreBox label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 2px; }
+.scoreBox input { width: 100%; }
+
+.tag { padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--line); background: #f4f3f7; }
+.tag.Scheduled { background: #e6eefa; border-color: #a9c0e6; }
+.tag.Auditioned { background: #fbf1da; border-color: #e5c987; }
+.tag.Shortlisted { background: #f1e3ea; border-color: #cf9bb1; }
+.tag.Selected { background: #e3f2e6; border-color: #9ccaa5; }
+.tag.Rejected { background: #f5e1e1; border-color: #d9a6a6; }
+.empty { color: var(--muted); padding: 16px; }
+
+@media (max-width: 600px) {
+  .top h1 { font-size: 1.6rem; }
+  .top p { display: none; }
+  main { padding-top: 22px; }
+}

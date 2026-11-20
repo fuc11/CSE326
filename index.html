@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casting Desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="top">
+    <h1>Casting Desk</h1>
+    <p>Roles, auditions and final selection in one place</p>
+  </div>
+  <nav>
+    <button data-page="home" class="active">Overview</button>
+    <button data-page="roles">Roles</button>
+    <button data-page="people">Candidates</button>
+    <button data-page="schedule">Auditions</button>
+    <button data-page="scores">Scoring</button>
+    <button data-page="final">Shortlist</button>
+  </nav>
+</header>
+
+<main>
+
+  <section id="home">
+    <h2>Where things stand</h2>
+    <div class="stats" id="stats"></div>
+    <div class="box">
+      <h3>Quick start</h3>
+      <p class="note">1. Add roles &nbsp; 2. Add candidates &nbsp; 3. Book auditions &nbsp; 4. Score them &nbsp; 5. Pick the final cast.</p>
+      <button id="sampleBtn">Fill with sample data</button>
+      <button id="clearBtn" class="plain">Clear everything</button>
+    </div>
+  </section>
+
+  <section id="roles" class="hide">
+    <h2>Roles</h2>
+    <div class="box">
+      <div class="row">
+        <input id="roleName" placeholder="Role name (e.g. Lead - Meera)">
+        <input id="roleDesc" placeholder="What the role needs">
+      </div>
+      <button id="addRole">Add role</button>
+      <button id="cancelRole" class="plain hide">Cancel</button>
+    </div>
+    <div id="roleList"></div>
+  </section>
+
+  <section id="people" class="hide">
+    <h2>Candidates</h2>
+    <div class="box">
+      <div class="row">
+        <input id="pName" placeholder="Full name">
+        <input id="pPhone" placeholder="Phone / email">
+        <select id="pRole"></select>
+        <input id="pExp" type="number" min="0" placeholder="Years of experience">
+      </div>
+      <button id="addPerson">Add candidate</button>
+      <button id="cancelPerson" class="plain hide">Cancel</button>
+    </div>
+    <div class="row">
+      <input id="search" placeholder="Search by name">
+      <select id="filterStatus">
+        <option value="">All statuses</option>
+        <option>Applied</option><option>Scheduled</option><option>Auditioned</option>
+        <option>Shortlisted</option><option>Selected</option><option>Rejected</option>
+      </select>
+    </div>
+    <table id="peopleTable"></table>
+  </section>
+
+  <section id="schedule" class="hide">
+    <h2>Audition slots</h2>
+    <div class="box">
+      <div class="row">
+        <select id="sPerson"></select>
+        <input id="sDate" type="date">
+        <input id="sTime" type="time">
+      </div>
+      <button id="addSlot">Book slot</button>
+      <p class="note">Two candidates can't share the same date and time. Booking again for the same person reschedules them.</p>
+    </div>
+    <table id="slotTable"></table>
+  </section>
+
+  <section id="scores" class="hide">
+    <h2>Scoring</h2>
+
+    <div class="box">
+      <h3>Evaluation criteria</h3>
+      <div id="critList"></div>
+      <div class="row">
+        <input id="critName" placeholder="New criterion (e.g. Dialogue delivery)">
+        <button id="addCrit">Add criterion</button>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>Give scores (0 to 10)</h3>
+      <div class="row"><select id="scPerson"></select></div>
+      <div class="row" id="scoreInputs"></div>
+      <button id="saveScore">Save scores</button>
+    </div>
+
+    <table id="scoreTable"></table>
+  </section>
+
+  <section id="final" class="hide">
+    <h2>Shortlist and final decision</h2>
+    <p class="note">Ranked by total score, highest first. Change the decision from the dropdown.</p>
+    <table id="finalTable"></table>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
