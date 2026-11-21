@@ -9,18 +9,18 @@
 <body>
 
 <header>
-  <div class="top">
+  <div class="strip"></div>
+  <div class="bar">
     <h1>Casting Desk</h1>
-    <p>Roles, auditions and final selection in one place</p>
+    <nav>
+      <button data-page="home" class="active">Overview</button>
+      <button data-page="roles">Roles</button>
+      <button data-page="people">Candidates</button>
+      <button data-page="schedule">Auditions</button>
+      <button data-page="scores">Scoring</button>
+      <button data-page="final">Shortlist</button>
+    </nav>
   </div>
-  <nav>
-    <button data-page="home" class="active">Overview</button>
-    <button data-page="roles">Roles</button>
-    <button data-page="people">Candidates</button>
-    <button data-page="schedule">Auditions</button>
-    <button data-page="scores">Scoring</button>
-    <button data-page="final">Shortlist</button>
-  </nav>
 </header>
 
 <main>
@@ -28,6 +28,16 @@
   <section id="home">
     <h2>Where things stand</h2>
     <div class="stats" id="stats"></div>
+    <div class="two">
+      <div class="box">
+        <h3>Upcoming auditions</h3>
+        <div id="upcoming"></div>
+      </div>
+      <div class="box">
+        <h3>Top scorers</h3>
+        <div id="topList"></div>
+      </div>
+    </div>
     <div class="box">
       <h3>Quick start</h3>
       <p class="note">1. Add roles &nbsp; 2. Add candidates &nbsp; 3. Book auditions &nbsp; 4. Score them &nbsp; 5. Pick the final cast.</p>
